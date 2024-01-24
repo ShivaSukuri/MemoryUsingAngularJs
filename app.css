@@ -1,0 +1,204 @@
+
+
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.container{
+    width: 100%;
+    min-height: 97vh;
+    background: linear-gradient(135deg,#153677,#4e085f);
+    
+}
+
+/* imgae information */
+
+.logoImage{
+    height: 100px;
+    width: 40%;
+    margin-top:35px ;
+    
+}
+
+/* input information  box*/
+
+.info{
+    
+    width: 70% ;
+    height: 5%;
+    margin: 0px auto 4%;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    top: 30px;
+    
+}
+.row1{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 20px 20px;
+}
+.row2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px 20px;
+}
+.save:hover{
+    background-color: rgb(57, 183, 57);
+}
+input{
+border: 1px solid black;
+outline: none;
+border-radius: 10px;
+background:#d8dadf;
+height: 30px;
+}
+input:hover{
+    border: 4px solid rgb(208, 171, 24);
+}
+#title{
+    width: 50%;
+    height: 40px;
+}
+#description{
+    width: 85%;
+    height: 40px;
+}
+button{
+    height: 30px;
+    width: 65px;
+    border-radius:10px ;
+}
+
+/* search Information */
+
+
+.searchBox{
+    width: 35%;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 30%;
+    margin-top:2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.searchInput{
+    width: 35%;
+    font-size: 15px;
+}
+.searchBox button:hover{
+    background-color: rgb(232, 156, 13);
+}
+
+
+
+/* DAYS NAMES */
+
+.days{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin-left:15% ;
+    margin-top: 1.5%;
+}
+.days div{
+    border: 1px solid black;
+    padding: 10px 25px 10px;
+    border-radius: 10px;
+    background-color :#d8dadf;
+}
+.days div.selectedDay { background-color: #e0a90f; } 
+
+/* list-items */
+.list-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.list-container li{
+    width: 70%;
+    min-height: 60px;
+    border: 1px solid black;
+    background-color: #d8dadf;
+    list-style: none;
+    border-radius: 10px;
+    margin: 2% auto 1%;
+    /* margin-left: 22.5%; */
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+.list-container li h3{
+   padding: 5px 20px 0px;
+   font-size: 2rem;
+   font-weight: 600;
+   text-align: left;
+}
+.list-container li p{
+    padding: 0px 20px 10px;
+    font-size: 1.6rem;
+    text-align: left;
+ }
+ .info-box1{
+    width: 70%;
+ }
+ .info-box2{
+    width: 15%;
+ }
+ .info-box3{
+    width: 15%;
+ }
+
+ .delete{
+    margin: 10px 20px 10px;
+    height: 30px;
+    font-size: 15px;
+   
+ } 
+ .delete:hover{
+    background-color: rgb(165, 31, 31);
+ }
+
+ /* edit */
+
+ .edit:hover{
+    background-color: green;
+ }
+ 
+ .name:click{
+    background-color: black;
+ }
+
+ /* modal body */
+
+ .modal-body{
+    margin-left: 100px;
+ }
+ .updateTitle{
+    margin: 10px;
+    width: 300px;
+    margin-left:20px ;
+ }
+ .updateDescription{
+    margin-bottom: 10px;
+   width: 300px;
+   margin-left: 20px;
+ }
+ .updateDate{
+    margin-right: 150px;
+    font-weight: 600;
+ }
+

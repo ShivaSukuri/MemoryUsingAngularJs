@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body ng-app="Memories" ng-controller="MemoryController">
+ <div class="container">
+    <img src="memory.jpg" alt="memories image" class="logoImage">
+    <form ng-submit="submitForm()">
+        <div class="info">
+            <div class="row1">
+                <input type="text" placeholder="Enter title" name="title" id="title"  ng-model="inputMemory.title" >
+                <input type="date" name="date" id="saveDate" min="{{todayDate}}" ng-model="inputMemory.currentDate" >
+            </div> 
+            <div class="row2">
+                <input type="text"  placeholder="description" id="description" name="description" ng-model="inputMemory.description">
+                <button class="save">SAVE</button>
+            </div>
+        </div>
+    </form>
+
+
+    <form >
+        <div class="searchBox"  >                                                               
+            <input type="date"  class="searchInput" ng-model="inputSearchDate">
+            <button ng-click="filterMemories()">Search</button>
+        </div>
+    </form>
+
+
+    <div class="days" id="days">
+        <div class="name" ng-class="{ 'selectedDay': isToday('SUN') }">SUN</div>
+        <div class="name" ng-class="{ 'selectedDay': isToday('MON') }">MON</div>
+        <div class="name" ng-class="{ 'selectedDay': isToday('TUE') }">TUE</div>
+        <div class="name" ng-class="{ 'selectedDay': isToday('WED') }">WED</div>
+        <div class="name" ng-class="{ 'selectedDay': isToday('THU') }">THU</div>
+        <div class="name" ng-class="{ 'selectedDay': isToday('FRI') }">FRI</div>
+        <div class="name" ng-class="{ 'selectedDay': isToday('SAT') }">SAT</div>
+    </div>
+    
+
+
+   
+
+      <div ng-repeat=" memory in filteredMemories track by $index">
+        <div class="list-container">
+          <ul>
+              <li>
+          <div class="info-box1">
+              <h3>{{memory.title}}</h3>
+              <p>{{memory.description}}</p>
+          </div>
+          <div class="info-box3">
+            <button ng-click="editMemory(memory)" class="edit">Edit</button>
+        </div>
+          <div class="info-box3">
+              <button ng-click="deleteMemory(memory)" class="delete">Delete</button>
+          </div>
+      </li>
+  </ul>
+      </div>
+      </div>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+       
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Memory update</h4>
+            </div>
+            <div class="modal-body" >
+                <form >
+                <table>
+                    <tr>
+                        <td align="left">Title</td>
+                        <td align="left"><input type="text" id="updateTitle" class="updateTitle" name="updateTitle" value="{{memory.title}}"></td>
+                    </tr>
+                    <tr>
+                        <td align="left">Description</td>
+                        <td align="left"><input type="text" id="updateDescription" class="updateDescription" name="updateDescription" value="{{memory.description}}" ></td>
+                    </tr>
+                    <tr>
+                        <td align="left"></td>
+                        <td align="left"><button  class="btn btn-default" data-dismiss="modal" ng-click="updateMemory()" class="updateButton">Update</button></td>
+                    </tr>
+                </table>
+            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+ </div>
+</body>
+</html>
